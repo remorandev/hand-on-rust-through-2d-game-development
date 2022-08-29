@@ -1,0 +1,25 @@
+cargo clippy
+    Checking clippy v0.1.0 (C:\Users\rmoran\Documents\git\rust\hand-on-rust-through-2d-game-development\RustFirstSteps\Clippy)
+warning: the loop variable `i` is only used to index `MYLIST`
+ --> src\main.rs:3:14
+  |
+3 |     for i in 0..3 {
+  |              ^^^^
+  |
+  = note: `#[warn(clippy::needless_range_loop)]` on by default
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#needless_range_loop
+help: consider using an iterator
+  |
+3 |     for <item> in &MYLIST {
+  |         ~~~~~~    ~~~~~~~
+
+warning: variable `MYLIST` should have a snake case name
+ --> src\main.rs:2:9
+  |
+2 |     let MYLIST = ["One", "Two", "Three"];
+  |         ^^^^^^ help: convert the identifier to snake case: `mylist`
+  |
+  = note: `#[warn(non_snake_case)]` on by default
+
+warning: `clippy` (bin "clippy") generated 2 warnings
+    Finished dev [unoptimized + debuginfo] target(s) in 0.28s
